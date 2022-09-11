@@ -1,25 +1,35 @@
 #include <iostream>
 using namespace std;
 
+// Өгөгдсөн тоо анхны тоо эсэхийг шалга.
 int main() {
-	int n;
-	bool prime = true;
-	cin >> n;
-	
-	if (n == 0 || n == 1)
-    	prime = false;
-	
-	for(int i = 2; i <= n/2; i++) {
-		if(n % i == 0) {
-			prime = false;
-			break; 
-		}
-	}
-	
-	if(prime)
-		cout << "Anhnii too mun" << endl;
-	else
-		cout << "Anhnii too bish" << endl;
-	
-	return 0;
+    // Гараас авах n, түүнийг анхны тоо эсэхийг хадгалах хувьсагч
+    int n;
+    bool prime = true;
+
+    // Гараас n авах
+    cin >> n;
+
+    // 0, 1 тоо нь анхны тоо биш учир анхны тоо биш гэж үзнэ
+    if (n == 0 || n == 1)
+        prime = false;
+
+    // 1 анхны тоо биш учраас 2-оос давталтыг эхлэнэ, өөрийг нь шалгах хэрэггүй тул эрс их
+    for (int i = 2; i < n; i++) {
+        // Хэрэв n тоо нь давталтын ямар нэгэн тоонд үлдэгдэлгүй хуваагдаж байвал
+        // анхны тоо биш гэж үзэн давталтыг зогсооно (цааш нь шалгах шаардлагагүй)
+        if (n % i == 0) {
+            prime = false;
+            // давталтыг зогсоох
+            break;
+        }
+    }
+
+    // Үр дүнг prime гэсэн хувьсагч дээр тулгуурлан хэвлэх
+    if (prime)
+        cout << "Anhnii too mun" << endl;
+    else
+        cout << "Anhnii too bish" << endl;
+
+    return 0;
 }
