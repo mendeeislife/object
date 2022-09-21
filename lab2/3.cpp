@@ -16,6 +16,6 @@ int main() {
     *(p + 4) = 50;
     for (int n = 0; n < 5; n++)
         cout << numbers[n] << ", ";
-        
+    cout<<endl;
     return 0;
 }
