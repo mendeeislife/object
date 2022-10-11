@@ -13,7 +13,7 @@ class Worker {
         float workedHours; // Ажилласан цаг
     // Гишүүн функц зарлах
     public:
-        void garaanii_utga_onooh() {
+        Worker() {
             id = 0;
             strcpy(name, "");
             strcpy(position, "Ажилчин");
@@ -63,7 +63,6 @@ class Worker {
 
 int main() {
     Worker employee;
-    employee.garaanii_utga_onooh();
     employee.get_data();
     cout << endl << "Ажилтны мэдээлэл" << endl;
     employee.put_data();
