@@ -159,9 +159,10 @@ int main() {
     Triangle t1("Gurvaljin2", 10, 10, 8);
     Triangle t2("Gurvaljin2", 10, 10, 6);
 
-    int n = 6;
+    int n = 6; // Дүрсийн тоо
     TwoDShape *td[n], *temp;
 
+    // Дүрс бүрийн хаягийг td хаяган хүснэгтэнд өгөх
     td[0] = &c1;
     td[1] = &c2;
     td[2] = &s1;
@@ -169,12 +170,13 @@ int main() {
     td[4] = &t1;
     td[5] = &t2;
 
+    // Эрэмблэлт хийхээс өмнөх дүрсийн талбайнууд дэлгэцлэх
     cout << "Before Sort:" << endl;
     for(int i = 0; i < n; i++)
         cout << td[i]->findS() << " ";
     cout << endl;
 
-    // Sorting
+    // Эрэмблэлт хийх
     for(int i = 0; i < n; i++)
         for(int j = i + 1; j < n; j++) {
             if(td[i]->findS() > td[j]->findS()) {
@@ -184,6 +186,7 @@ int main() {
             }
         }
 
+    // Эрэмблэлт хийсний дараах дүрсийн талбайнууд дэлгэцлэх
     cout << "After Sort:" << endl;
     for(int i = 0; i < n; i++)
         cout << td[i]->findS() << " ";
