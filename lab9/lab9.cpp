@@ -53,10 +53,10 @@ class Person {
         cout << "Register: " << ssnum << endl;
         cout << "Age: " << age << endl;
     }
-    // ~Person() {
-    //     delete[] name;
-    //     delete[] ssnum;
-    // }
+    ~Person() {
+        delete[] name;
+        delete[] ssnum;
+    }
 };
 
 class Spouse : public Person {
@@ -106,9 +106,9 @@ class Child : public Person {
     void showChildData() {
         showPersonData();
     }
-    // ~Child() {
-    //     delete[] favoriteToy;
-    // }
+    ~Child() {
+        delete[] favoriteToy;
+    }
 };
 
 class Division {
